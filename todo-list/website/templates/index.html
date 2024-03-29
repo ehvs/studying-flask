@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <div class="container-sm text-center">
+        <h1 class="display-3">Welcome</h1>
+
+        <p class="lead">A place to add lists</p>
+
+        <hr class="my-4">
+
+        <p> Do you have an account?</p>
+
+        <div class="d-flex justify-content-center">
+            <a href="{{url_for('auth.login')}}" class="btn btn-primary mx-2">Login</a>
+            <a href="{{url_for('auth.signup')}}" class="btn btn-secondary mx-2">Sign Up</a>
+        </div>
+
+    </div>
+{% endblock %}
