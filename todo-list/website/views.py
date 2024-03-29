@@ -24,8 +24,9 @@ def create():
     if request.method == 'POST':
         function_title = request.form['title']
         function_desc = request.form['desc']
+        function_deadline = request.form['deadline']
 
-        obj_todo = Todo(g.user.id, function_title, function_desc)
+        obj_todo = Todo(g.user.id, function_title, function_desc, function_deadline)
 
         db.session.add(obj_todo)
         db.session.commit()

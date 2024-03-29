@@ -2,28 +2,28 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy() # The object that will be used for requests
-DB_NAME = "secflaskapp.db"
+DB_NAME = "mydb.db"
 
 def create_app():
-    app = Flask(__name__)
+    myapp = Flask(__name__)
 
     # Configuracao do projeto
-    app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    myapp.config['SECRET_KEY'] = 'qiwuyeiweyq ywqiey'
+    myapp.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     
-    db.init_app(app)
+    db.init_app(myapp)
 
     # Registrar Blueprint
     from .views import views
     from .auth import auth
 
-    app.register_blueprint(views)
-    app.register_blueprint(auth)
+    myapp.register_blueprint(views)
+    myapp.register_blueprint(auth)
 
     from .models import User, Todo
 
     # Import models that may be missing
-    with app.app_context():
+    with myapp.app_context():
         db.create_all()
 
-    return app
+    return myapp
