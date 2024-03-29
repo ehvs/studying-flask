@@ -1,6 +1,6 @@
 # # My app
 
-![Current look](/home/hgomes/Documents/Github/studying-flask/my2ndapp.png)
+![Current look](my2ndapp.png)
 
 
 
